@@ -170,7 +170,7 @@ repeatBtn.addEventListener('click',() =>
 
      musicAudio.addEventListener("ended",() =>
     {
-     if(repeatBtn.classList.contains('fa-repeat'))
+    if(repeatBtn.classList.contains('fa-repeat'))
     {
         nextMusic();
     }
@@ -195,13 +195,13 @@ const ulTags = container.querySelector("ul");
 
 for(let i = 0 ; i < allmusic.length ; i++)
 {
-  let liTags = `<li  li-index = ${i+1} onclick = ${clicked(this)}">
+  let liTags = `<li>
                     <div class="row">
                         <span>${allmusic[i].name}</span>
                         <p>${allmusic[i].artist}</p>
                     </div>
-                     <audio class ="${allmusic[i].src}" src="${allmusic[i].src}.mp3"></audio>
-                    <span id = "audio/${allmusic[i].src}" class="audio-duration">1:45</span>
+                    <audio class ="${allmusic[i].src}" src="audio/${allmusic[i].src}.mp3"></audio>
+                    <span id = "${allmusic[i].src}" class="audio-duration">1:45</span>
                 </li>`;
 
    ulTags.insertAdjacentHTML('beforeend',liTags)
@@ -211,8 +211,8 @@ for(let i = 0 ; i < allmusic.length ; i++)
 let  audioDurationTags = ulTags.querySelector(`#${allmusic[i].src}`);
 let liAudioTag = ulTags.querySelector(`.${allmusic[i].src}`)
 
-liAudioTag.addEventListener('loadeddata' ,() =>
-{
+  liAudioTag.addEventListener('loadeddata' ,() =>
+ {
     let duration = liAudioTag.duration;
     let totalMin = Math.floor(duration / 60);
     let totalSec = Math.floor(duration % 60);
@@ -223,7 +223,7 @@ liAudioTag.addEventListener('loadeddata' ,() =>
     }
 
     audioDurationTags.textContent = `${totalMin} :${totalSec}`;
-})
+  })
 }
 
 // const allliTags = ulTags.querySelectorAll("li")
