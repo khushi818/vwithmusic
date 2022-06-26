@@ -1,33 +1,32 @@
-export const  allmusic = [
-      
+export const  allmusic = [      
       {
          "name": "Bruno_Mars_-_Finesse",
          "artist": "Bruno_Mars",
-         "img": "",
+         "img": "Bruno-mars.png",
          "src": "Bruno_Mars_-_Finesse"
       },
       {
          "name": "Bruno_Mars_-_Grenade",
          "artist": "Bruno_Mars",
-         "img": "",
+         "img": "Bruno-mars.png",
          "src": "Bruno_Mars_-_Grenade"
       },
        {
          "name": "Bruno_Mars_-_Thats_What_I_Like",
          "artist": "Bruno_Mars",
-         "img": "",
+         "img": "Bruno-mars.png",
          "src": "Bruno_Mars_-_Thats_What_I_Like"
       },
        {
          "name": "Carly_Rose_-_Song_Of_The_Summer",
          "artist": "Carly_Rose",
-         "img": "",
+         "img": "Carly-rose.png",
          "src": "Carly_Rose_-_Song_Of_The_Summer"
       },
        {
          "name": "Flo_Rida_-_Good_Feeling",
          "artist": "Flo_Rida",
-         "img": "",
+         "img": "florida.png",
          "src": "Flo_Rida_-_Good_Feeling"
       },
        {
@@ -39,7 +38,7 @@ export const  allmusic = [
        {
          "name": "Snoop_Dogg__Wiz_Khalifa_Feat._Bruno_Mars_-_Young_Wild__Free",
          "artist": "Bruno_Mars",
-         "img": "",
+         "img": "Bruno-mars.png",
          "src": "Snoop_Dogg__Wiz_Khalifa_Feat._Bruno_Mars_-_Young_Wild__Free"
       },
        {

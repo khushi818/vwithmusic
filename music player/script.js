@@ -38,7 +38,7 @@ function loadMusic(indexNumb)
 {
     musicName.textContent = allmusic[indexNumb-1].name;
     musicArtist.textContent = allmusic[indexNumb - 1].artist;
-    musicimg.textContent = allmusic[indexNumb - 1];
+    musicimg.src = `img/${allmusic[indexNumb - 1].img}`;
     musicAudio.src = `audio/${allmusic[indexNumb-1].src}.mp3`;
 }
 
