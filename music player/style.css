@@ -32,7 +32,6 @@ body {
     width: 160px;
     margin: 25px;
     margin-top: 50px;
-
 }
 
 .nav-links {
@@ -250,6 +249,12 @@ body {
     pointer-events: auto;
 }
 
+.song-timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .song-timer span {
     font-size: 13px;
     color: #0d0e0d;
@@ -388,4 +393,44 @@ ul li .audio-duration {
 ul li.playing {
     pointer-events: none;
     color: #0e9fff;
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        flex-direction: column;
+    }
+
+    .flexbox-item {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .navbar {
+        margin: 20px;
+        min-height: 70px;
+        max-width: 1000px;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+    .nav-links li:hover~.active {
+        display: block;
+        transition: 0.3s;
+    }
+
+    .nav-links li:nth-child(1):hover~.active {
+        top: 20%;
+    }
+
+    .nav-links li:nth-child(2):hover~.active {
+        top: 20%;
+        left: 33%
+    }
+
+    .nav-links li:nth-child(3):hover~.active {
+        top: 20%;
+        left: 58%
+    }
 }

@@ -189,12 +189,13 @@ repeatBtn.addEventListener('click',() =>
 })   
 })
 
+
 // array list of music
 const ulTags = container.querySelector("ul");
 
 for(let i = 0 ; i < allmusic.length ; i++)
 {
-  let liTags = `<li>
+  let liTags = `<li  li-index = ${i+1} onclick = ${clicked(this)}">
                     <div class="row">
                         <span>${allmusic[i].name}</span>
                         <p>${allmusic[i].artist}</p>
@@ -205,10 +206,33 @@ for(let i = 0 ; i < allmusic.length ; i++)
 
    ulTags.insertAdjacentHTML('beforeend',liTags)
    
-}
+
 
 let  audioDurationTags = ulTags.querySelector(`#${allmusic[i].src}`);
 let liAudioTag = ulTags.querySelector(`.${allmusic[i].src}`)
 
+liAudioTag.addEventListener('loadeddata' ,() =>
+{
+    let duration = liAudioTag.duration;
+    let totalMin = Math.floor(duration / 60);
+    let totalSec = Math.floor(duration % 60);
+
+    if(totalSec < 10)
+    {
+        totalSec = `0${totalSec}`;
+    }
+
+    audioDurationTags.textContent = `${totalMin} :${totalSec}`;
+})
+}
+
+// const allliTags = ulTags.querySelectorAll("li")
+
+// function clicked(element)
+// {
+//     musicIndex = element.
+//     loadMusic(musicIndex);
+//     playit();
+// }
 
 
