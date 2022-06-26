@@ -39,7 +39,7 @@ function loadMusic(indexNumb)
     musicName.textContent = allmusic[indexNumb-1].name;
     musicArtist.textContent = allmusic[indexNumb - 1].artist;
     musicimg.textContent = allmusic[indexNumb - 1];
-    musicAudio.src = `${allmusic[indexNumb-1].src}.mp3`;
+    musicAudio.src = `audio/${allmusic[indexNumb-1].src}.mp3`;
 }
 
 function playAudio() {
@@ -201,7 +201,7 @@ for(let i = 0 ; i < allmusic.length ; i++)
                         <p>${allmusic[i].artist}</p>
                     </div>
                      <audio class ="${allmusic[i].src}" src="${allmusic[i].src}.mp3"></audio>
-                    <span id = "${allmusic[i].src}" class="audio-duration">1:45</span>
+                    <span id = "audio/${allmusic[i].src}" class="audio-duration">1:45</span>
                 </li>`;
 
    ulTags.insertAdjacentHTML('beforeend',liTags)
