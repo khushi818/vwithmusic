@@ -9,11 +9,7 @@
 
 
 body {
-    background: #0F2027;
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-    background: linear-gradient(to right,
-            #2C5364, #0F2027,
-            #203A43)
+    background-image: linear-gradient(#FFF8EF, #FEEFDC, #E3FFF8, #FFFFFF);
 }
 
 .side-nav {
@@ -169,8 +165,6 @@ button {
     height: 100%;
     width: 100%;
 }
-
-
 
 #stream-controls {
     display: none;
