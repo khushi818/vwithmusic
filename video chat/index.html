@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6a5517bc13.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <span class="inner-text">
+            <div class="flexbox-container">
+                <div class="flexbox-item navbar">
+                    <div class="side-nav">
+                        <a href="#" class="vwithmusic">
+                            <img src="../images/vwithmusic.png" class="logo-img">
+                        </a>
+                        <a href="#" class="toggle-button">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </a>
+                        <ul class="nav-links">
+                            <li><a href="../vwithmusicfinal.html"><i class="fa-solid fa-house"></i>
+                                    <p>Home</p>
+                                </a></li>
+                            <li><a href="../music player/index.html"><i class="fa-solid fa-music"></i>
+                                    <p>Music</p>
+                                </a></li>
+                            <li><a href="../video chat/index.html"><i class="fa-solid fa-video"></i>
+                                    <p>Video</p>
+                                </a></li>
+                            <div class="active"> </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </span>
+    </aside>
+    <button id="join-btn">Join Stream</button>
+    <div id="stream-wrapper">
+        <div id="video-streams"></div>
+        <div id="stream-controls">
+            <button id="leave-btn">Leave Stream</button>
+            <button id="mic-btn">Mic On</button>
+            <button id="camera-btn">Camera On</button>
+        </div>
+    </div>
+    <script src="AgoraRTC_N-4.12.0.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

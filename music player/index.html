@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <span class="inner-text">
+            <div class="flexbox-container">
+                <div class="flexbox-item navbar">
+                    <div class="side-nav">
+                        <a href="#" class="vwithmusic">
+                            <img src="../images/vwithmusic.png" class="logo-img">
+                        </a>
+                        <a href="#" class="toggle-button">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </a>
+                        <ul class="nav-links">
+                            <li><a href="../vwithmusicfinal.html"><i class="fa-solid fa-house"></i>
+                                    <p>Home</p>
+                                </a></li>
+                            <li><a href="../music player/index.html"><i class="fa-solid fa-music"></i>
+                                    <p>Music</p>
+                                </a></li>
+                            <li><a href="../video chat/index.html"><i class="fa-solid fa-video"></i>
+                                    <p>Video</p>
+                                </a></li>
+                            <div class="active"> </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </span>
+    </aside>
+
+    <div class="container paused">
+        <div class="top-bar">
+            <i class="fa-solid fa-heart"></i>
+            <span>Now Playing</span>
+            <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="img-area">
+            <img src="" alt="">
+        </div>
+
+        <div class="song-details">
+            <p class="name"></p>
+            <p class="artist"></p>
+        </div>
+
+        <div class="progress-area">
+            <div class="progress-bar">
+                <audio id="main-audio" src=""></audio>
+            </div>
+            <div class="song-timer">
+                <span class="current-time">0:00</span>
+                <span class="max-duration">0:00</span>
+            </div>
+            <audio id="main-audio" src=""></audio>
+        </div>
+
+        <div class="controls">
+            <i id="repeat-plist" class="fa-solid fa-repeat"></i>
+            <i id="prev" class="fa-solid fa-backward"></i>
+
+            <div class="play-pause">
+                <i class="fa-solid fa-play"></i>
+            </div>
+
+            <i id="next" class="fa-solid fa-forward"></i>
+            <i id="more-music" class="fa-solid fa-list"></i>
+        </div>
+
+        <div class="music-list">
+            <div class="header">
+                <div class="row">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Music List</span>
+                </div>
+                <i class="fas fa-close"></i>
+            </div>
+            <ul>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js" type="module" defer></script>
+</body>
+
+</html>
