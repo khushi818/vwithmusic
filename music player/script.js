@@ -27,9 +27,10 @@ musicList.classList.remove('show')
 
 let musicIndex = 1;
 
+
 window.addEventListener("load" , () =>
-{
-    loadMusic(musicIndex)
+{    
+loadMusic(musicIndex)      // Show loading animation.
 })
 
 //load music function
@@ -42,33 +43,38 @@ function loadMusic(indexNumb)
     musicAudio.src = `audio/${allmusic[indexNumb-1].src}.mp3`;
 }
 
-function playAudio() {
-  if(container.classList.contains("paused"))
-  { 
-  container.classList.remove('paused'); 
-  musicAudio.play();
-  playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'
-  }
-  else
-  {
-    container.classList.add('paused');
-    musicAudio.pause();
-    playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; 
-  }
-}
-
 function playit()
 {
-   container.classList.remove('paused'); 
+  container.classList.remove('paused');       
   musicAudio.play();
   playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'   
 }
 
+function pauseit()
+{
+    container.classList.add('paused');
+    musicAudio.pause();
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+}
+
+
+function playAudio() {
+  if(container.classList.contains("paused"))
+  {
+   playit();
+  }
+  else 
+  {
+     pauseit();
+  }
+}
+
+
+
 function nextMusic()
 {
     musicIndex === allmusic.length ? musicIndex = 1 : musicIndex++;
-    musicIndex++;
-    loadMusic(musicIndex)
+    loadMusic(musicIndex);
     playit();
 }
 
@@ -147,8 +153,8 @@ progressarea.addEventListener("click" ,(e) =>
     let songDuration = musicAudio.duration; // getting song total duration
 
     musicAudio.currentTime = (clickOffSetX / progressWidth) * songDuration;
-    playit();
- })
+    setTimeout(playit(),150);
+})
 
 //change loop , shuffle , repeat icon onclick
 
@@ -190,29 +196,25 @@ repeatBtn.addEventListener('click',() =>
 })
 
 
-// array list of music
+//array list of music
 const ulTags = container.querySelector("ul");
 
 for(let i = 0 ; i < allmusic.length ; i++)
 {
-  let liTags = `<li>
+  let liTags = `<li data-id = ${i+1}>
                     <div class="row">
                         <span>${allmusic[i].name}</span>
                         <p>${allmusic[i].artist}</p>
                     </div>
                     <audio class ="${allmusic[i].src}" src="audio/${allmusic[i].src}.mp3"></audio>
-                    <span id = "${allmusic[i].src}" class="audio-duration">1:45</span>
+                    <span id = "${allmusic[i].src}" class="audio-duration"></span>
                 </li>`;
 
    ulTags.insertAdjacentHTML('beforeend',liTags)
-   
-
-
-let  audioDurationTags = ulTags.querySelector(`#${allmusic[i].src}`);
-let liAudioTag = ulTags.querySelector(`.${allmusic[i].src}`)
-
-  liAudioTag.addEventListener('loadeddata' ,() =>
- {
+   let  audioDurationTags = ulTags.querySelector(`#${allmusic[i].src}`);
+   let liAudioTag = ulTags.querySelector(`.${allmusic[i].src}`)
+   audioDurationTags && liAudioTag.addEventListener('loadeddata' ,(e) =>
+   {
     let duration = liAudioTag.duration;
     let totalMin = Math.floor(duration / 60);
     let totalSec = Math.floor(duration % 60);
@@ -224,15 +226,22 @@ let liAudioTag = ulTags.querySelector(`.${allmusic[i].src}`)
 
     audioDurationTags.textContent = `${totalMin} :${totalSec}`;
   })
+   
 }
 
-// const allliTags = ulTags.querySelectorAll("li")
 
-// function clicked(element)
-// {
-//     musicIndex = element.
-//     loadMusic(musicIndex);
-//     playit();
-// }
+ulTags.addEventListener('click',(e) =>
+{
+    if(e.target.matches('li'))
+    {
+      musicIndex = parseInt(e.target.dataset.id)
+      console.log(musicIndex)
+    }
+    pauseit();
+    loadMusic(musicIndex)
+    playit();
+})
+
+
 
 
