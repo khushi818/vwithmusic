@@ -29,8 +29,8 @@ let musicIndex = 1;
 
 
 window.addEventListener("load" , () =>
-{    
-loadMusic(musicIndex)      // Show loading animation.
+{
+loadMusic(musicIndex)
 })
 
 //load music function
@@ -106,10 +106,14 @@ musicAudio.addEventListener('timeupdate',(e) =>
 {
     const currentTime = e.target.currentTime;
     const duration = e.target.duration;
-
+    
     let progressWidth  = (currentTime/duration)*100;
     progressBar.style.width = `${progressWidth}%`
-     
+    if(progressBar.style.width === '100%')
+    {
+        progressBar.style.width = '0%';
+        nextMusic();
+    } 
     let musicCurrentTime = container.querySelector('.current-time'),
     musicDuration = container.querySelector('.max-duration');
 
@@ -155,6 +159,8 @@ progressarea.addEventListener("click" ,(e) =>
     musicAudio.currentTime = (clickOffSetX / progressWidth) * songDuration;
     setTimeout(playit(),150);
 })
+
+    
 
 //change loop , shuffle , repeat icon onclick
 
@@ -225,10 +231,8 @@ for(let i = 0 ; i < allmusic.length ; i++)
     }
 
     audioDurationTags.textContent = `${totalMin} :${totalSec}`;
-  })
-   
+  })  
 }
-
 
 ulTags.addEventListener('click',(e) =>
 {
